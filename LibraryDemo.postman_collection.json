@@ -1,0 +1,99 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Library Demo",
+		"_postman_id": "d80dc003-a37d-26bf-a7a5-88d6b103fee2",
+		"description": "Dotnet Core Library Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Books",
+			"request": {
+				"url": "http://127.0.0.1:5000/api/Book",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book By Id",
+			"request": {
+				"url": "http://127.0.0.1:5000/api/Book/0",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"url": "http://127.0.0.1:5000/api/Book",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\" : 1,\n\t\"Title\" : \"Matilda\",\n\t\"Author\" : \"Roald Dahl\",\n\t\"PublishDate\" : \"1988-10-01\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Book",
+			"request": {
+				"url": "http://127.0.0.1:5000/api/Book/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"url": "http://127.0.0.1:5000/api/Book",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\" : 1,\n\t\"Title\" : \"Matilda\",\n\t\"Author\" : \"Roald Dahl\",\n\t\"PublishDate\" : \"1988-10-01\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

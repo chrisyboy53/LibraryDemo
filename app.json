@@ -1,0 +1,13 @@
+{
+     "database": {
+         "Server": "",
+         "Catalog": "LibraryDb",
+         "PersistSecurityInfo": false,
+         "UserId": "",
+         "Password": "",
+         "MultipleActiveResultSets": false,
+         "Encrypted": true,
+         "TrustServerCertificate": false,
+         "ConnectionTimeout": 30
+     }
+ }
