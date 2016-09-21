@@ -3,3 +3,4 @@ obj
 project.lock.json
 Migrations
 private
+node_modules

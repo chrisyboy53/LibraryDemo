@@ -1,0 +1,22 @@
+{
+  "name": "librarydemo",
+  "version": "1.0.0",
+  "description": "NPM for handling javascript frameworks",
+  "main": "none",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisyboy53/LibraryDemo.git"
+  },
+  "author": "Chris White",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisyboy53/LibraryDemo/issues"
+  },
+  "homepage": "https://github.com/chrisyboy53/LibraryDemo#readme",
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

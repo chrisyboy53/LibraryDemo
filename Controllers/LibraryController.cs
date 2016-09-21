@@ -31,7 +31,7 @@ namespace Homemade.Controllers
                 return new StatusCodeResult((int)HttpStatusCode.NotFound);
             }
             
-            return new JsonResult(result);
+            return new JsonResult(result) { StatusCode = (int)HttpStatusCode.OK };
         }
 
         [HttpPost]

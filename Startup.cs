@@ -1,6 +1,8 @@
 using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
@@ -50,7 +52,15 @@ namespace Homemade
 
         public void Configure(IApplicationBuilder app) {
             app.UseMvc();
+            // Uses the wwwroot folder for all static files
             app.UseStaticFiles();
+            // Allow node modules to show on '/libs' web root
+            app.UseStaticFiles(new StaticFileOptions() {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), @"node_modules")
+                ),
+                RequestPath = new PathString("/libs")
+            });
         }
     }
     
