@@ -1,6 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -30,19 +31,19 @@ namespace Homemade
             services.AddMvc();
             
             // Setup DataAccess
-            // services.AddTransient<IDataAccess<Book>, BookDataAccess>();
+            services.AddSingleton<IDataAccess<Book>, BookDataAccess>();
             
             #region EntityFrameworkCore Code
             
-            var databaseSection = Configuration.GetSection("database");
-            Homemade.Configuration.Database dbConfig = new Homemade.Configuration.Database();
-            ConfigurationBinder.Bind(databaseSection, dbConfig);
+            // var databaseSection = Configuration.GetSection("database");
+            // Homemade.Configuration.Database dbConfig = new Homemade.Configuration.Database();
+            // ConfigurationBinder.Bind(databaseSection, dbConfig);
 
-            string dbConnStr = dbConfig.ToString();
+            // string dbConnStr = dbConfig.ToString();
 
-            services.AddEntityFrameworkSqlServer()
-                    .AddDbContext<LibraryDbContext>(options => options.UseSqlServer(dbConnStr));
-            services.AddScoped<IDataAccess<Book>, BookDataAccessEF>();
+            // services.AddEntityFrameworkSqlServer()
+            //         .AddDbContext<LibraryDbContext>(options => options.UseSqlServer(dbConnStr));
+            // services.AddScoped<IDataAccess<Book>, BookDataAccessEF>();
             
             #endregion
 
@@ -50,7 +51,10 @@ namespace Homemade
             services.AddScoped<ILibrary, Library>();
         }
 
-        public void Configure(IApplicationBuilder app) {
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory) {
+            
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            
             app.UseMvc();
             // Uses the wwwroot folder for all static files
             app.UseStaticFiles();

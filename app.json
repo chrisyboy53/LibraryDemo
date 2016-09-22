@@ -9,5 +9,14 @@
          "Encrypted": true,
          "TrustServerCertificate": false,
          "ConnectionTimeout": 30
+     },
+     "Logging": {
+         "IncludeScopes": false,
+         "LogLevel": {
+            "Default": "Debug",
+            "System": "Information",
+            "Microsoft": "Information",
+            "Homemade.Services.Library": "Trace"
+         }
      }
  }
