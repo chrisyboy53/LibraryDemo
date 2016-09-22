@@ -16,7 +16,6 @@ namespace Homemade.Tests.Controllers
         Mock<ILibrary> _mockedLibrary = null;
         Book[] books = new Book[] {new Book(1, "First Book", "First Author", new DateTime(2016, 09, 21)) };
 
-
         /// <summary>
         /// Setups the mocked version of ILibrary
         /// </summary>
@@ -46,6 +45,9 @@ namespace Homemade.Tests.Controllers
 
         [Fact]
         public void GetNonExistingBookInLibrary() {
+            /*
+             * Create the Controller passing in ILibrary Service
+             */
             LibraryController controller = new LibraryController(_mockedLibrary.Object);
             var results = controller.GetBookById(500) as StatusCodeResult;
             // Ensure we get a not found http status code 404
