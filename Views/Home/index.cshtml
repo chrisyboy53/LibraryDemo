@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="/libs/angular/angular.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/HomeController.js"></script>
+
+    <!-- jQuery -->
+    <script src="/libs/jquery/dist/jquery.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.css">
+    <script src="/libs/bootstrap/dist/js/bootstrap.js"></script>
+
+</head>
+<body data-ng-app="LibraryDemo" data-ng-controller="HomeCtrl">
+    <header class="container">
+        <h1 class="page-header">Library Demo</h1>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Add Book</a></li>
+            </ul>
+            <form class="nav navbar-form navbar-right">
+                <fieldset class="form-group">
+                    <input id="txtSearch" type="text" class="form-control" placeholder="Search">
+                </fieldset>
+            </form>
+        </nav>
+    </header>
+    <section class="container">
+        <header>
+            <h1>Library Demo Application</h1>
+        </header>
+        <p>
+            This is to try out <em>.NET Core</em> with <em>ASP.NET Core</em>. This application is designed with <em>SOLID</em>
+            principles in mind, and taking full advantage of the Dependency injection.
+        </p>
+    </section>
+    <section class="container">
+        <div class="panel panel-default">
+            <header class="panel-heading">
+                Current Books in Library
+            </header>
+        
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Book Id</td>
+                            <td>Title</td>
+                            <td>Author</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="book in Books">
+                            <td>{{ book.Id }}</td>
+                            <td>{{ book.Title }}</td>
+                            <td>{{ book.Author }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
