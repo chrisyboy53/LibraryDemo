@@ -4,14 +4,16 @@ This is a simple demo to getting into DotNet Core
 
 # Getting Started
 
-The core technology used here is DotNetCore and Microsoft.ASPNetCore WebAPI.
+The core technology used here is `DotNetCore`, `Microsoft.ASPNetCore`, and `AngularJS`.
 
-This demo uses the Startup to help startup MVC, and custom services used in the
+This demo uses the `Startup` class to help startup MVC, and custom services used in the
 controllers.
 
-To begin using the application open up a terminal and type
+To begin using the application for the **first time**. Open up a terminal and type
 
 ``` bash
+
+npm install
 
 dotnet restore
 
@@ -27,7 +29,7 @@ Pay attention to the output from the terminal to see what the URL is for the hos
 
 usually is
 
-http://localhost:5000/
+`http://localhost:5000/`
 
 however the port number could change.
 
