@@ -2,7 +2,9 @@
 
 This is a simple demo to getting into DotNet Core
 
-Build Status [![Build Status](https://travis-ci.org/chrisyboy53/LibraryDemo.svg?branch=master)](https://travis-ci.org/chrisyboy53/LibraryDemo)
+Build Status 
+
+[![Build Status](https://travis-ci.org/chrisyboy53/LibraryDemo.svg?branch=master)](https://travis-ci.org/chrisyboy53/LibraryDemo)
 
 # Getting Started
 
