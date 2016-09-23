@@ -55,7 +55,9 @@ namespace Homemade
             
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             
-            app.UseMvc();
+            app.UseMvc(routes => {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}");
+            });
             // Uses the wwwroot folder for all static files
             app.UseStaticFiles();
             // Allow node modules to show on '/libs' web root
