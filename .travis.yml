@@ -1,3 +1,8 @@
 language: csharp
-dotnet: 1.0.0-preview2-003221
-mono: none
+matrix:
+    include:
+        dotnet: 1.0.0-preview2-003221
+        mono: none
+        env: DOTNETCORE=1
+scripts:
+    build.sh
