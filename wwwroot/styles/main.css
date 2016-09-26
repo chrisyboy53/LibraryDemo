@@ -2,6 +2,10 @@ body {
     padding-top:70px;
 }
 
+.navbar-default .navbar-nav > .active > a {
+    -webkit-animation: 0.5s nav_menu_fade_in;
+}
+
 .alert.ng-hide-add {
     -webkit-animation: 0.5s fade_out;
     display: block!important;
@@ -19,4 +23,9 @@ body {
 @-webkit-keyframes fade_in {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@-webkit-keyframes nav_menu_fade_in {
+    from { background-color: transparent; }
+    to { background-color: #e7e7e7; }
 }
