@@ -1,8 +1,14 @@
 angular.module('LibraryDemo').controller('HomeCtrl',
     [
         '$scope', 
-        function($scope) {
-            $scope.Books = [{ Id: 1, Title: 'Chrisyboy Book', Author: 'Chrisyboy' }];
+        'LibraryEndpoint',
+        function($scope, LibraryEndpoint) {
 
+            $scope.Init = function() {
+                LibraryEndpoint.Book.query(function(data) {
+                    $scope.Books = data;
+                })
+            };
+            
     }]
 );

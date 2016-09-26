@@ -1,0 +1,25 @@
+<div class="panel panel-default" data-ng-init="Init()">
+    <header class="panel-heading">
+        Current books in Library
+    </header>
+
+    <div class="panel-body">
+        <p data-ng-if="!Books || (Books && Books.length === 0)">There are currently no books in the database go ahead and <a href="#/AddBook">add some</a></p>
+        <table class="table" data-ng-if="Books && Books.length > 0">
+            <thead>
+                <tr>
+                    <td>Book Id</td>
+                    <td>Title</td>
+                    <td>Author</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="book in Books">
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,1 +1,1 @@
-var app = angular.module('LibraryDemo', []);
+var app = angular.module('LibraryDemo', ['ngRoute','ngResource']);

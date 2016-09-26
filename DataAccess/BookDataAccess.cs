@@ -31,6 +31,15 @@ namespace Homemade.DataAccess
 
         public bool Insert(Book obj)
         {
+            if (obj.Id == -1) {
+                if (_cache.Any()) {
+                    obj.Id = _cache.Select(T=> T.Id).Max() + 1;
+                }
+                else {
+                    obj.Id = 0;
+                }                
+            }
+
             if (obj != null && !_cache.Any(T => T.Id == obj.Id)) {
                 _cache.Add(obj);
                 return true;
