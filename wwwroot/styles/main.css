@@ -6,23 +6,22 @@ body {
     -webkit-animation: 0.5s nav_menu_fade_in;
 }
 
-.alert.ng-hide-add {
-    -webkit-animation: 0.5s fade_out;
-    display: block!important;
+.alert {
+    -moz-transition: 0.25s linear all;
+    -o-transition: 0.25s linear all;
+    -webkit-transition: 0.25s linear all;
+    transition: 0.25s linear all;
+
+    display: block !important;
+    opacity: 1;
+    height:50px;
 }
 
-.alert.ng-hide-remove {
-    -webkit-animation: 0.5s fade_in;
-}
-
-@-webkit-keyframes fade_out {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-@-webkit-keyframes fade_in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.alert.ng-hide {
+    opacity: 0;
+    height:0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 @-webkit-keyframes nav_menu_fade_in {
