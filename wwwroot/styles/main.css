@@ -1,3 +1,22 @@
 body {
     padding-top:70px;
 }
+
+.alert.ng-hide-add {
+    -webkit-animation: 0.5s fade_out;
+    display: block!important;
+}
+
+.alert.ng-hide-remove {
+    -webkit-animation: 0.5s fade_in;
+}
+
+@-webkit-keyframes fade_out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@-webkit-keyframes fade_in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

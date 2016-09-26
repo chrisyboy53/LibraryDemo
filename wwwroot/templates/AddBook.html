@@ -4,10 +4,20 @@
     </header>
 
     <div class="panel-body">
-        <form name="frmAddBook">
-            <label for="txtBookName">Book Name</label><input type="text" name="txtBookName" id="txtBookName" data-ng-model="NewBook.Title" class="form-control" required placeholder="Enter Book Name">
-            <label for="txtAuthor">Author</label><input type="text" name="txtAuthor" id="txtAuthor" data-ng-model="NewBook.Author" class="form-control" required placeholder="Enter Author Name">
-            <label for="txtPublishDate">Publish Date</label><input type="date" name="txtPublishDate" id="txtPublishDate" data-ng-model="NewBook.PublishDate" class="form-control" required>
+        <div class="alert alert-success" role="alert" data-ng-show="BookCreated">You have successfully created <strong data-ng-bind="OldBook.Title"></strong></div>
+        <form name="frmAddBook" class="form-group">
+            <div class="form-group">
+                <label for="txtBookName">Book Name:</label>
+                <input type="text" name="txtBookName" id="txtBookName" data-ng-model="NewBook.Title" class="form-control" required placeholder="Enter Book Name">
+            </div>
+            <div class="form-group">
+                <label for="txtAuthor">Author:</label>
+                <input type="text" name="txtAuthor" id="txtAuthor" data-ng-model="NewBook.Author" class="form-control" required placeholder="Enter Author Name">
+            </div>
+            <div class="form-group">
+                <label for="txtPublishDate">Publish Date:</label>
+                <input type="date" name="txtPublishDate" id="txtPublishDate" data-ng-model="NewBook.PublishDate" class="form-control" required>
+            </div>
             <input type="submit" value="Add Book" class="btn btn-primary" data-ng-click="Save()" data-ng-disabled="frmAddBook.$invalid" class="form-control">
         </form>
     </div>
