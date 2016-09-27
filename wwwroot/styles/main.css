@@ -3,6 +3,7 @@ body {
 }
 
 .navbar-default .navbar-nav > .active > a {
+    animation: 0.5s nav_menu_fade_in;
     -webkit-animation: 0.5s nav_menu_fade_in;
 }
 
@@ -22,6 +23,11 @@ body {
     height:0px;
     padding-top: 0px;
     padding-bottom: 0px;
+}
+
+@keyframes nav_menu_fade_in {
+    from { background-color: transparent; }
+    to { background-color: #e7e7e7; }
 }
 
 @-webkit-keyframes nav_menu_fade_in {
