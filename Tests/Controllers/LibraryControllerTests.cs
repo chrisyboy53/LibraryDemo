@@ -14,7 +14,7 @@ namespace Homemade.Tests.Controllers
     public class LibraryControllerTests {
 
         Mock<ILibrary> _mockedLibrary = null;
-        Book[] books = new Book[] {new Book(1, "First Book", "First Author", new DateTime(2016, 09, 21)) };
+        Book[] books = new Book[] { new Book(1, "First Book", "First Author", new DateTime(2016, 09, 21)) };
 
         /// <summary>
         /// Setups the mocked version of ILibrary
@@ -65,6 +65,30 @@ namespace Homemade.Tests.Controllers
 
             // Make sure its the same book as our mocked version
             Assert.Equal(results.Value as Book, books.First(T => T.Id == id));
+        }
+
+        [Fact]
+        public void DeleteABookInLibrary() {
+            int id = 1;
+
+            _mockedLibrary.Setup(repo => repo.RemoveBook(It.IsAny<Book>())).Returns(true);
+
+            LibraryController controller = new LibraryController(_mockedLibrary.Object);
+            var results = controller.RemoveBook(id) as StatusCodeResult;
+
+            Assert.True(results.StatusCode == (int)HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public void DeleteABookThatIsNotInLibrary() {
+            int id = 1;
+
+            _mockedLibrary.Setup(repo => repo.RemoveBook(It.IsAny<Book>())).Returns(false);
+
+            LibraryController controller = new LibraryController(_mockedLibrary.Object);
+            var results = controller.RemoveBook(id) as StatusCodeResult;
+
+            Assert.True(results.StatusCode == (int)HttpStatusCode.NotFound);
         }
 
     }
