@@ -1,14 +1,6 @@
 {
      "database": {
-         "Server": "",
-         "Catalog": "LibraryDb",
-         "PersistSecurityInfo": false,
-         "UserId": "",
-         "Password": "",
-         "MultipleActiveResultSets": false,
-         "Encrypted": true,
-         "TrustServerCertificate": false,
-         "ConnectionTimeout": 30
+         "ConnectionString":"server=192.168.99.100;userid=root;pwd=password;port=3306;database=LibraryDemo;"
      },
      "Logging": {
          "IncludeScopes": false,

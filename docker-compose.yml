@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+
+    libdemo:
+        build:
+            context: .
+            dockerfile: dockerfile
+        ports: 
+            - "5000:5000"
+        networks: 
+            - library_net
+
+    mysqlserver:
+        build:
+            context: .
+            dockerfile: mysql.dockerfile
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=LibraryDemo
+        ports: 
+            - "3306:3306"
+        networks:
+            - library_net
+
+networks:
+    library_net:
+        driver: bridge
+

@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
+using MySQL.Data.Entity.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Homemade.Services;
@@ -31,19 +32,18 @@ namespace Homemade
             services.AddMvc();
             
             // Setup DataAccess
-            services.AddSingleton<IDataAccess<Book>, BookDataAccess>();
+            // services.AddSingleton<IDataAccess<Book>, BookDataAccess>();
             
             #region EntityFrameworkCore Code
             
-            // var databaseSection = Configuration.GetSection("database");
-            // Homemade.Configuration.Database dbConfig = new Homemade.Configuration.Database();
-            // ConfigurationBinder.Bind(databaseSection, dbConfig);
+            var databaseSection = Configuration.GetSection("database");
+            Homemade.Configuration.Database dbConfig = new Homemade.Configuration.Database();
+            ConfigurationBinder.Bind(databaseSection, dbConfig);
 
-            // string dbConnStr = dbConfig.ToString();
-
-            // services.AddEntityFrameworkSqlServer()
-            //         .AddDbContext<LibraryDbContext>(options => options.UseSqlServer(dbConnStr));
-            // services.AddScoped<IDataAccess<Book>, BookDataAccessEF>();
+            string dbConnStr = dbConfig.ToString();
+            
+            services.AddDbContext<LibraryDbContext>(options => options.UseMySQL(dbConnStr));
+            services.AddScoped<IDataAccess<Book>, BookDataAccessEF>();
             
             #endregion
 

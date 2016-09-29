@@ -4,7 +4,7 @@ angular.module('LibraryDemo').controller('AddBookCtrl',['$scope' ,'LibraryEndpoi
 
         function newBook() {
             return {
-                Id: -1,
+                Id: 0,
                 Title: "",
                 Author: "",
                 PublishDate: new Date()
