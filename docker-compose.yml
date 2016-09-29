@@ -22,8 +22,13 @@ services:
             - "3306:3306"
         networks:
             - library_net
+        volumes:
+            - libraryDB:/var/lib/mysql
 
 networks:
     library_net:
         driver: bridge
+
+volumes:
+    libraryDB:
 
