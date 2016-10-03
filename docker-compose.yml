@@ -1,7 +1,16 @@
 version: '2'
 
 services:
-
+    libdemodev:
+        build:
+            context: .
+            dockerfile: dev.dockerfile
+        volumes:
+            - ".:/var/www"
+        ports:
+            - "3000:5000"
+        networks:
+            - library_net
     libdemo:
         build:
             context: .
