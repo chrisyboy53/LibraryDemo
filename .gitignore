@@ -5,3 +5,5 @@ Migrations
 private
 node_modules
 artifacts
+wwwroot/**/*.d.ts
+wwwroot/**/*.js.map
