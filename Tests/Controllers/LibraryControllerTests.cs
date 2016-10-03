@@ -38,7 +38,7 @@ namespace Homemade.Tests.Controllers
             Assert.NotEmpty(bookResults.Value as IList<Book>);
             
             var firstBook = ((IList<Book>)bookResults.Value).First();
-            var expectedTitle = "First Book  ddd";
+            var expectedTitle = "First Book";
             Assert.Equal(expectedTitle, firstBook.Title);
 
         }

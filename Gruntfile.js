@@ -16,7 +16,7 @@ module.exports = function(grunt) {
                 options: {
                     module: 'amd',
                     target: 'es5',
-                    basePath: 'wwwroot/typescripts',
+                    basePath: 'wwwroot/typings',
                     sourceMap: true,
                     declaration: true,
                     keepDirectoryHierarchy: true,
