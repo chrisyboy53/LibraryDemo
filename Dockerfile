@@ -7,4 +7,4 @@ COPY app.json /root/app.json
 EXPOSE 5000/tcp
 ENV ASPNETCORE_URLS http://+:5000
 WORKDIR /root
-ENTRYPOINT dotnet /root/LibraryDemo.dll
+ENTRYPOINT dotnet ./DotNetLibraryDemo.dll
